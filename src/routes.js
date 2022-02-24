@@ -6,9 +6,11 @@ const router = express.Router()
 
 const apiV1 = require('./controllers/ApiRoute1')
 const apiV2 = require('./controllers/ApiRoute2')
+const pets = require('./controllers/ApiRoute3')
 
 router.use(apiV1)
 router.use('/v2', apiV2)
+router.use('/pets', pets())
 
 router.get('/test-get', ToolsController.show)
 router.post('/test-post', store)
